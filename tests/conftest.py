@@ -61,7 +61,5 @@ def auth_headers(auth_service, user):
             "password": user.password
         },
         headers={"Content-Type": "application/x-www-form-urlencoded"}
-    )
-    print(token.json())
-    print(token.status_code)
-    return {"authorization": f"Bearer {token.json()['access_token']}"}
+    ).json()
+    return {"authorization": f"Bearer {token['access_token']}"}
