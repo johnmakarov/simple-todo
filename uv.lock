@@ -187,6 +187,7 @@ dependencies = [
     { name = "aiofiles" },
     { name = "alembic" },
     { name = "asyncpg" },
+    { name = "curlify2" },
     { name = "fastapi" },
     { name = "fastapi-users" },
     { name = "fastapi-users-db-sqlalchemy" },
@@ -198,6 +199,7 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "pymongo" },
     { name = "sqlalchemy", extra = ["asyncio"] },
+    { name = "structlog" },
     { name = "ujson" },
     { name = "uvicorn", extra = ["standard"] },
     { name = "yarl" },
@@ -206,9 +208,11 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "anyio" },
+    { name = "faker" },
     { name = "httpx" },
     { name = "mypy" },
     { name = "pre-commit" },
+    { name = "pydantic" },
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-env" },
@@ -222,6 +226,7 @@ requires-dist = [
     { name = "aiofiles", specifier = ">=25.1.0,<26" },
     { name = "alembic", specifier = ">=1.17.2,<2" },
     { name = "asyncpg", specifier = ">=0.31.0,<1" },
+    { name = "curlify2", specifier = ">=2.0.0" },
     { name = "fastapi", specifier = ">=0.122.0,<1" },
     { name = "fastapi-users", specifier = ">=15.0.1,<16" },
     { name = "fastapi-users-db-sqlalchemy", specifier = ">=7.0.0,<8" },
@@ -233,6 +238,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.12.0,<3" },
     { name = "pymongo", specifier = ">=4.15.4,<5" },
     { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0.44,<3" },
+    { name = "structlog", specifier = ">=25.5.0" },
     { name = "ujson", specifier = ">=5.11.0,<6" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.38.0,<1" },
     { name = "yarl", specifier = ">=1.22.0,<2" },
@@ -241,9 +247,11 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "anyio", specifier = ">=4.11.0,<5" },
+    { name = "faker", specifier = ">=39.1.0" },
     { name = "httpx", specifier = ">=0.28.1,<1" },
     { name = "mypy", specifier = ">=1.19.0,<2" },
     { name = "pre-commit", specifier = ">=4.5.0,<5" },
+    { name = "pydantic", specifier = ">=2.12.5" },
     { name = "pytest", specifier = ">=9.0.1,<10" },
     { name = "pytest-cov", specifier = ">=7.0.0,<8" },
     { name = "pytest-env", specifier = ">=1.2.0,<2" },
@@ -576,6 +584,15 @@ wheels = [
 ]
 
 [[package]]
+name = "curlify2"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/91/24/3803baab3519ee855b6f6f6a81dca7af1ff8640bccb177765a227df9f835/curlify2-2.0.0.tar.gz", hash = "sha256:6c3a98dc8603b76da990f58754b18ec4e9bfe5b881fc52d33ddf9d9096568809", size = 2537, upload-time = "2023-06-09T15:17:32.329Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/43/db/8428ec3fa111a69db05de651ac7378b3b3eb8b558dd1cd7d262f4904c200/curlify2-2.0.0-py3-none-any.whl", hash = "sha256:23878b13fa33ed92ae5dff0476e5b881b39fc79a5fcb37e6726f96239a136474", size = 3085, upload-time = "2023-06-09T15:17:30.459Z" },
+]
+
+[[package]]
 name = "datamodel-code-generator"
 version = "0.50.0"
 source = { registry = "https://pypi.org/simple" }
@@ -624,6 +641,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f5/22/900cb125c76b7aaa450ce02fd727f452243f2e91a61af068b40adba60ea9/email_validator-2.3.0.tar.gz", hash = "sha256:9fc05c37f2f6cf439ff414f8fc46d917929974a82244c20eb10231ba60c54426", size = 51238, upload-time = "2025-08-26T13:09:06.831Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/de/15/545e2b6cf2e3be84bc1ed85613edd75b8aea69807a71c26f4ca6a9258e82/email_validator-2.3.0-py3-none-any.whl", hash = "sha256:80f13f623413e6b197ae73bb10bf4eb0908faf509ad8362c5edeb0be7fd450b4", size = 35604, upload-time = "2025-08-26T13:09:05.858Z" },
+]
+
+[[package]]
+name = "faker"
+version = "39.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "tzdata" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/73/5e/f30b61314d3cbfdb48a631a1aa859bbff8a1945436d52981d5afc6ee87c6/faker-39.1.0.tar.gz", hash = "sha256:35d40738093a62158f349f4996115680ca591d9789f24c99a4afa522a1dd4018", size = 1948026, upload-time = "2025-12-29T16:19:56.343Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cf/d6/f5a9fbd529968757bdcd6d57e1f52ddb2cb66327564e83b05081eb525af9/faker-39.1.0-py3-none-any.whl", hash = "sha256:c86673bb06a1244b9555f1a773465e553a9be44e2d14a8fa6a834ce95f5f7b46", size = 1984865, upload-time = "2025-12-29T16:19:54.511Z" },
 ]
 
 [[package]]
@@ -1743,6 +1772,15 @@ wheels = [
 ]
 
 [[package]]
+name = "structlog"
+version = "25.5.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ef/52/9ba0f43b686e7f3ddfeaa78ac3af750292662284b3661e91ad5494f21dbc/structlog-25.5.0.tar.gz", hash = "sha256:098522a3bebed9153d4570c6d0288abf80a031dfdb2048d59a49e9dc2190fc98", size = 1460830, upload-time = "2025-10-27T08:28:23.028Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a8/45/a132b9074aa18e799b891b91ad72133c98d8042c70f6240e4c5f9dabee2f/structlog-25.5.0-py3-none-any.whl", hash = "sha256:a8453e9b9e636ec59bd9e79bbd4a72f025981b3ba0f5837aebf48f02f37a7f9f", size = 72510, upload-time = "2025-10-27T08:28:21.535Z" },
+]
+
+[[package]]
 name = "typeguard"
 version = "4.4.4"
 source = { registry = "https://pypi.org/simple" }
@@ -1773,6 +1811,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz", hash = "sha256:ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464", size = 75949, upload-time = "2025-10-01T02:14:41.687Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl", hash = "sha256:4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7", size = 14611, upload-time = "2025-10-01T02:14:40.154Z" },
+]
+
+[[package]]
+name = "tzdata"
+version = "2025.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz", hash = "sha256:de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7", size = 196772, upload-time = "2025-12-13T17:45:35.667Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c7/b0/003792df09decd6849a5e39c28b513c06e84436a54440380862b5aeff25d/tzdata-2025.3-py2.py3-none-any.whl", hash = "sha256:06a47e5700f3081aab02b2e513160914ff0694bce9947d6b76ebd6bf57cfc5d1", size = 348521, upload-time = "2025-12-13T17:45:33.889Z" },
 ]
 
 [[package]]
