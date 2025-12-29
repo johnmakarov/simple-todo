@@ -37,6 +37,7 @@ dev = [
   "anyio >=4.11.0,<5",
   "pytest-env >=1.2.0,<2",
   "httpx >=0.28.1,<1",
+  "restcodegen>=2.0.1",
 ]
 
 
@@ -120,11 +121,11 @@ lint.ignore = [
     "PLR0913", # Too many arguments for function call
     "D106",    # Missing docstring in public nested class
 ]
+lint.mccabe = { max-complexity = 10 }
 exclude = [
     "backend/db/migrations",
     ".venv/"
 ]
-lint.mccabe = { max-complexity = 10 }
 line-length = 88
 
 [tool.ruff.lint.per-file-ignores]
