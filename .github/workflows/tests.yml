@@ -18,12 +18,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          cache: 'poetry'
-      - name: Install deps
-        run: poetry install
+          python-version: '3.12'
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.7.13"
       - name: Run lint check
-        run: poetry run pre-commit run -a ${{ matrix.cmd }}
+        run: uv run pre-commit run -a ${{ matrix.cmd }}
   pytest:
     runs-on: ubuntu-latest
     steps:
